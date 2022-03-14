@@ -16,11 +16,11 @@
         }
     ],
     "require": {
-        "php": "^7|^8",
+        "php": "^7.3|^7.4|^8",
         "illuminate/database": "5.8.*|^6|^7|^8",
         "illuminate/filesystem": "5.8.*|^6|^7|^8",
         "illuminate/http": "5.8.*|^6|^7|^8",
-        "illuminate/support": "5.8.*|^6|^7|^8",
+        "illuminate/support": "5.8.*|^6|^7|^8.0",
         "illuminate/view": "5.8.*|^6|^7|^8"
     },
     "require-dev": {
