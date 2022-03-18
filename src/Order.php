@@ -91,7 +91,7 @@ class Order
 
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $order_id];
         
-        $response = $this->client->post($this->url."/moap" , $form_data)->throw();
+        $response = $this->client->get($this->url."/moap" , $form_data)->throw();
         if ($response->successful()) {
             return $response->json();
         }
@@ -109,7 +109,7 @@ class Order
         $csv_order_numbers = implode(',' , $order_ids);
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $csv_order_numbers];
         
-        $response = $this->client->post($this->url."/moap" , $form_data)->throw();
+        $response = $this->client->get($this->url."/moap" , $form_data)->throw();
         if ($response->successful()) {
             return $response->json();
         }
