@@ -43,7 +43,7 @@ class Order
         $response = $this->client->post($this->url."/co" , $form_data)->throw();
         
         if ($response->successful()) {
-            return json_encode($response->json());
+            return $response->json();
         }
     }
 
@@ -73,7 +73,8 @@ class Order
         
         $response = $this->client->post($this->url."/cmo" , $form_data)->throw();
         if ($response->successful()) {
-            return json_decode($response->json());
+
+            return $response->json();
         }
     }
 
@@ -92,7 +93,7 @@ class Order
         
         $response = $this->client->post($this->url."/moap" , $form_data)->throw();
         if ($response->successful()) {
-            return json_decode($response->json());
+            return $response->json();
         }
     }
 
@@ -110,7 +111,7 @@ class Order
         
         $response = $this->client->post($this->url."/moap" , $form_data)->throw();
         if ($response->successful()) {
-            return json_decode($response->json());
+            return $response->json();
         }
     }
 
@@ -128,7 +129,7 @@ class Order
         
         $response = $this->client->get($this->url."/moab" , $form_data)->throw();
         if ($response->successful()) {
-            return json_decode($response->json());
+            return $response->json();
         }
     }
 
@@ -146,9 +147,9 @@ class Order
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $csv_order_numbers];
         
         $response = $this->client->get($this->url."/moab" , $form_data)->throw();
-        
+
         if ($response->successful()) {
-            return json_decode($response->json());
+            return $response->json();
         }
     }
 
@@ -166,7 +167,7 @@ class Order
         $response = $this->client->get($this->url."/ggos" , $form_data)->throw();
 
         if ($response->successful()) {
-            return json_decode($response->json());
+            return $response->json();
         }
     }
     
@@ -185,7 +186,7 @@ class Order
         $response = $this->client->get($this->url."/gpo" , $form_data)->throw();
 
         if ($response->successful()) {
-            return json_decode($response->json());
+            return $response->json();
         }
     }
 

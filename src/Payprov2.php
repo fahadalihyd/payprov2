@@ -19,23 +19,9 @@ class Payprov2
      */
 
 
-    public static function orderCreate()
+    public static function orderCreate($order_data)
     {
-
-     $order_data =   [
-            "OrderNumber" => "Test-804",
-            "OrderAmount" => "200",
-            "OrderDueDate" => "25/10/2021",
-            "OrderType" => "Service",
-            "IssueDate" => "05/05/2021",
-            "OrderExpireAfterSeconds" => "0",
-            "CustomerName" => "Fahad",
-            "CustomerMobile" => "",
-            "CustomerEmail" => "",
-            "CustomerAddress" => ""
-        ];
-
-        (new Order())->create($order_data);
+        return (new Order())->create($order_data);
     }
 
     /**
@@ -50,37 +36,9 @@ class Payprov2
      */
 
 
-    public static function orderCreateMultiple()
+    public static function orderCreateMultiple($order_data)
     {
-
-     $order_data =   [
-            [
-            "OrderNumber" => "Test-804",
-            "OrderAmount" => "200",
-            "OrderDueDate" => "25/10/2021",
-            "OrderType" => "Service",
-            "IssueDate" => "05/05/2021",
-            "OrderExpireAfterSeconds" => "0",
-            "CustomerName" => "Fahad",
-            "CustomerMobile" => "",
-            "CustomerEmail" => "",
-            "CustomerAddress" => ""
-            ],
-            [
-            "OrderNumber" => "Test-804",
-            "OrderAmount" => "200",
-            "OrderDueDate" => "25/10/2021",
-            "OrderType" => "Service",
-            "IssueDate" => "05/05/2021",
-            "OrderExpireAfterSeconds" => "0",
-            "CustomerName" => "Fahad",
-            "CustomerMobile" => "",
-            "CustomerEmail" => "",
-            "CustomerAddressX" => ""
-            ],
-        ];
-
-        (new Order())->createMultiple($order_data);
+         return (new Order())->createMultiple($order_data);
     }
 
     /**
@@ -95,7 +53,7 @@ class Payprov2
 
     public static function orderPaid($order_id)
     {
-        (new Order())->markPaid($order_id);
+        return (new Order())->markPaid($order_id);
     }
 
     /**
@@ -110,7 +68,7 @@ class Payprov2
 
     public static function orderPaidMultiple($order_ids)
     {
-        (new Order())->markPaid($order_ids);
+        return (new Order())->markPaid($order_ids);
     }
 
 
@@ -126,7 +84,7 @@ class Payprov2
 
     public static function orderBlock($order_id)
     {
-        (new Order())->block($order_id);
+        return (new Order())->block($order_id);
     }
 
     /**
@@ -141,7 +99,7 @@ class Payprov2
 
     public static function orderBlockMultiple($order_ids)
     {
-        (new Order())->blockMultiple($order_ids);
+        return (new Order())->blockMultiple($order_ids);
     }
 
 
@@ -157,7 +115,7 @@ class Payprov2
 
     public static function orderStatus($cpay_id)
     {
-        (new Order())->status($cpay_id);
+        return (new Order())->status($cpay_id);
     }
 
     /**
@@ -173,7 +131,7 @@ class Payprov2
 
     public static function getPaidOrders($start_date  , $end_date)
     {
-        (new Order())->getPaid($start_date , $end_date);
+        return (new Order())->getPaid($start_date , $end_date);
     }
 
 
@@ -188,20 +146,9 @@ class Payprov2
      */
 
 
-    public static function customerCreateMultiple()
+    public static function customerCreateMultiple($customer_data)
     {
-
-     $customer_data =   [
-            [
-                "ConsumerID" => "7867861",
-                "Name" => "Userone",
-                "Mobile" => "03001234567",
-                "Email" => "abcde@paypro.com.pk",
-                "Address" => "Address"
-            ],
-        ];
-
-        (new Customer())->createMultiple($customer_data);
+        return (new Customer())->createMultiple($customer_data);
     }
 
 
@@ -217,20 +164,9 @@ class Payprov2
      */
 
 
-    public static function customerUpdateMultiple()
+    public static function customerUpdateMultiple($customer_data)
     {
-
-     $customer_data =   [
-            [
-                "ConsumerID" => "7867861",
-                "Name" => "Userone",
-                "Mobile" => "03001234567",
-                "Email" => "abcde@paypro.com.pk",
-                "Address" => "Address"
-            ],
-        ];
-
-        (new Customer())->updateMultiple($customer_data);
+        return (new Customer())->updateMultiple($customer_data);
     }
 
 
@@ -245,19 +181,8 @@ class Payprov2
      */
 
 
-    public static function customerUpdate()
+    public static function customerUpdate($customer_data)
     {
-
-     $customer_data =   [
-            [
-                "ConsumerID" => "7867861",
-                "Name" => "Userone",
-                "Mobile" => "03001234567",
-                "Email" => "abcde@paypro.com.pk",
-                "Address" => "Address"
-            ],
-        ];
-
-        (new Customer())->update($customer_data);
+        return (new Customer())->update($customer_data);
     }
 }

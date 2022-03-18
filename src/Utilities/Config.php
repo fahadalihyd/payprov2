@@ -17,7 +17,7 @@ trait Config
     public function __construct()
     {
         $this->url = config('payprov2.baseUrl');
-        $this->merchant = config('payprov2.baseUrl');
+        $this->merchant = config('payprov2.merchantId');
         $this->client = Http::withHeaders([
             'token' => $this->getAccessToken()
         ]);

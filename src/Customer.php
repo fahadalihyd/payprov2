@@ -44,7 +44,7 @@ class Customer
 
         $response = $this->client->post($this->url."/cmc" , $form_data)->throw();
         if ($response->successful()) {
-            return json_encode($response->json());
+            return $response->json();
         }
     }
 
@@ -68,7 +68,7 @@ class Customer
         $response = $this->client->post($this->url."/uc" , $form_data)->throw();
 
         if ($response->successful()) {
-            return json_encode($response->json());
+            return $response->json();
         }
     }
 
@@ -98,7 +98,7 @@ class Customer
 
         $response = $this->client->post($this->url."/umc" , $form_data)->throw();
         if ($response->successful()) {
-            return json_encode($response->json());
+            return $response->json();
         }
     }
 
