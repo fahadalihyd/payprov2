@@ -43,7 +43,7 @@ class Order
         $response = $this->client->post($this->url."/co" , $form_data)->throw();
         
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
 
@@ -74,7 +74,7 @@ class Order
         $response = $this->client->post($this->url."/cmo" , $form_data)->throw();
         if ($response->successful()) {
 
-            return $response->json();
+            return $response->object();
         }
     }
 
@@ -90,10 +90,9 @@ class Order
     {
 
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $order_id];
-        
-        $response = $this->client->get($this->url."/moap" , $form_data)->throw();
+        $response = $this->client->asJson()->send('GET' , $this->url."/moap" , ['body' => json_encode($form_data) ] )->throw();
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
 
@@ -109,9 +108,9 @@ class Order
         $csv_order_numbers = implode(',' , $order_ids);
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $csv_order_numbers];
         
-        $response = $this->client->get($this->url."/moap" , $form_data)->throw();
+        $response = $this->client->asJson()->send('GET' , $this->url."/moap" , ['body' => json_encode($form_data) ])->throw();
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
 
@@ -127,9 +126,9 @@ class Order
 
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $order_id];
         
-        $response = $this->client->get($this->url."/moab" , $form_data)->throw();
+        $response = $this->client->asJson()->send('GET' , $this->url."/moab" , ['body' => json_encode($form_data) ])->throw();
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
 
@@ -145,11 +144,9 @@ class Order
     {
         $csv_order_numbers = implode(',' , $order_ids);
         $form_data = ['Username' => $this->merchant , 'CsvOrderNumbers' => $csv_order_numbers];
-        
-        $response = $this->client->get($this->url."/moab" , $form_data)->throw();
-
+        $response = $this->client->asJson()->send('GET' , $this->url."/moab" , ['body' => json_encode($form_data) ] )->throw();
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
 
@@ -160,14 +157,12 @@ class Order
      *  @throws Exception
      */
 
-    public function status(Array $cpay_id)
+    public function status($cpay_id)
     {
         $form_data = ['userName' => $this->merchant , 'cpayId' => $cpay_id];
-        
-        $response = $this->client->get($this->url."/ggos" , $form_data)->throw();
-
+        $response = $this->client->asJson()->send('GET' , $this->url."/ggos" , ['body' => json_encode($form_data) ] )->throw();
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
     
@@ -182,11 +177,9 @@ class Order
     public function getPaid($start , $end)
     {
         $form_data = ['Username' => $this->merchant , 'startDate' => $start , 'endDate' => $end];
-        
-        $response = $this->client->get($this->url."/gpo" , $form_data)->throw();
-
+        $response = $this->client->asJson()->send('GET' , $this->url."/gpo" , ['body' => json_encode($form_data) ] )->throw();
         if ($response->successful()) {
-            return $response->json();
+            return $response->object();
         }
     }
 
