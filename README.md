@@ -1,4 +1,4 @@
-# Very short description of the package
+# PayPro V2 PHP/Laravel SDK 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/fahadalihyd/payprov2.svg?style=flat-square)](https://packagist.org/packages/fahadalihyd/payprov2)
 [![Total Downloads](https://img.shields.io/packagist/dt/fahadalihyd/payprov2.svg?style=flat-square)](https://packagist.org/packages/fahadalihyd/payprov2)
