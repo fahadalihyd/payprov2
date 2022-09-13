@@ -138,6 +138,21 @@ class Payprov2
     /**
      *  Create Multiple Customers
      * 
+     *  @param array $customer_data ["ConsumerID", "Name", "Mobile", "Email", "Address"]
+     * 
+    *   @return Array|Object
+     *  @throws Exception
+     */
+
+
+    public static function customerCreate($customer_data)
+    {
+        return (new Customer())->create($customer_data);
+    }
+
+    /**
+     *  Create Multiple Customers
+     * 
      *  @param array $customer_data [
      *     ["ConsumerID", "Name", "Mobile", "Email", "Address"]
      * ]

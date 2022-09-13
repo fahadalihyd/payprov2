@@ -26,6 +26,32 @@ class Customer
      *  @throws Exception
      */
 
+    public function create($customer)
+    {
+
+        if (!isset($customer)) {
+            throw new Exception("Invalid data!");
+        }
+
+        $form_data = [
+            ['MerchantId' => $this->merchant]
+        ];
+
+        $this->validateParams($this->customer_params , $customer);
+        $form_data[] = $customer;
+        
+        $response = $this->client->post($this->url."/cc" , $form_data)->throw();
+        if ($response->successful()) {
+            return $response->object();
+        }
+    }
+    /**
+     *  Create Multiple Customer
+     * 
+     *  @param array $customer [["ConsumerID", "Name", "Mobile", "Email", "Address"]]
+     *  @throws Exception
+     */
+
     public function createMultiple($customers = [])
     {
 

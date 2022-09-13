@@ -84,7 +84,7 @@ trait Config
     {
         foreach ($params_keys as $key => $value) {
             if (!array_key_exists($value , $data)) {
-                $index_text = isset($index) ? "at the index[{$index}]" : '';
+                $index_text = isset($index) ? "at the Array[{$index}]" : '';
                 throw new Exception("Order key is missing $value {$index_text}");
             }
         }        
